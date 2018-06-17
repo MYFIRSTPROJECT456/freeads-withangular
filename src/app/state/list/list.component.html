@@ -1,0 +1,22 @@
+<table datatable class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th >STATEID</th>
+      <th >STATENAME</th>
+      <th >CREATION DATE</th>
+      <th >UPDATION DATE</th>
+      <th>Action</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let list of stateLists">
+      <td>{{ list.STATEID }}</td>
+      <td>{{ list.STATENAME }}</td>
+      <td>{{ list.CREATIONDATE }}</td>
+      <td>{{ list.UPDATIONDATE }}</td>
+      <td><a [routerLink] = "['/update', list.STATEID]">Edit</a></td>
+      <td><a (click) = "deleteState(list.STATEID)">Delete</a></td>
+    </tr>
+  </tbody>
+</table>

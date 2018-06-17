@@ -1,0 +1,37 @@
+<div class="panel-heading">
+  <div class="panel-heading-btn">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+  </div>
+  <h4 class="panel-title">Update Users</h4>
+</div>
+<div class="panel-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <form #myform="ngForm" (ngSubmit)="updateUsers(myform);" style="border:solid 1px #f3f3f3; padding: 27px;">
+          <label for="">User Name : </label><input type="text" class="form-control" id="uid"  name="USERNAME" [(ngModel)]="usersData.USERNAME" ngModel required>
+          <br>
+          <label for="">Mobile No. : </label><input type="text" class="form-control" id="mob" name="MOBILENO" [(ngModel)]="usersData.MOBILENO"  ngModel required>
+          <br>
+          <label for="">Email Id : </label>
+          <input type="text" class="form-control" id="email" name="EMAILID" [(ngModel)]="usersData.EMAILID" ngModel required>
+          <br>
+          <label for="">Status : </label>
+          <select name="STATUS" id="" class="form-control" [(ngModel)]="usersData.STATUS" ngModel required>
+            <option value="Confirm">Confirm</option>
+            <option value="Unconfirm">Unconfirm</option>
+          </select>
+          <br>
+          <label for="">Userpassword : </label><input type="text" class="form-control" id="upass" name="USERPASSWORD" [(ngModel)]="usersData.USERPASSWORD" ngModel required>
+          <br>
+          <input type="submit" value="UPDATE USER" [disabled]="myform.invalid" class="btn btn-success">
+        </form>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+</div>

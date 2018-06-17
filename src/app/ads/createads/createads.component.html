@@ -1,0 +1,78 @@
+<div class="panel-heading">
+    <div class="panel-heading-btn">
+        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+    </div>
+    <h4 class="panel-title">Create New Ads</h4>
+  </div>
+  <div class="panel-body">
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-4 col-xs-4"></div>
+          <div class="col-sm-4 col-xs-4">
+              <form #myform="ngForm" (ngSubmit)="createAdsData(myform)" style="border:solid 1px #f3f3f3;" >
+                  <label for="">Title : </label>
+                  <input style="width: 225px;" type="text" class="form-control" id="tit" name="tit" ngModel required>
+                  <br>
+                  <label for="">Tags/Keywords : </label>
+                  <input style="width: 225px;" type="text" class="form-control" id="tags" name="tags" ngModel required>
+                  <br>
+                  <label for="">Discription : </label>
+                  <textarea style="width: 225px;" id="Discription" class="form-control" rows="3" name="dis" ngModel required></textarea>
+                  <br>
+                  <label for="">Upload Image :</label>
+                  <input type="file" id="img" name="img" (change)=fileEvent($event) ngModel>
+                  <br>
+                  <label for="">Website : </label>
+                  <input style="width: 225px;" type="text" class="form-control" id="web" name="web" ngModel required>
+                  <br>
+                  <label for="">Category: </label>
+                  <select (change)="onChangeCategory($event.target.value)" style="width: 225px;" name="c1name" id="c1name" class="form-control" ngModel required>  
+                      <option value="">Select Category</option>
+                      <option *ngFor="let list of categoryLists" value="{{ list.CATEGORYID }}">{{ list.CATEGORYNAME }}</option>      
+                  </select>
+                  <br>
+                  <label for="">Sub-Category : </label>
+                  <select style="width: 225px;" name="scat" id="scat" class="form-control" ngModel required>
+                      <option value="">Select Sub-Category</option>
+                      <option *ngFor="let list of subcategoryLists" value="{{ list. CATEGORYID }}">{{ list.CATEGORYNAME }}</option>
+                  </select>
+                  <br>
+                  <label for="">State : </label>
+                  <select (change)="onChangeState($event.target.value)" style="width: 225px;" name="sname" id="sname" class="form-control" ngModel required>
+                      <option value="">Select State</option>
+                      <option *ngFor="let list of stateLists" value="{{ list.STATEID }}">{{ list.STATENAME }}</option>      
+                  </select>
+                  <br>
+                  <label for="">City : </label>
+                  <select (change)="onChangeCity($event.target.value)" style="width: 225px;" name="cityname" id="cname" class="form-control" ngModel required>
+                      <option value="">Select City</option>
+                      <option *ngFor="let list of cityLists" value="{{ list.CITYID }}">{{ list.CITYNAME }}</option>
+                  </select>
+                  <br>
+                  <label for="">Locality Name : </label>
+                  <select style="width: 225px;" name="lname" id="lname" class="form-control" ngModel required>
+                      <option value="">Select Locality</option>
+                      <option *ngFor="let list of localityLists" value="{{ list.LOCALITYID }}">{{ list.LOCALITYNAME }}</option>
+                  </select>
+                  <br>
+                  <label for="">Area : </label>
+                  <input style="width: 225px;" type="text" class="form-control" id="area" name="area" ngModel required>
+                  <br>
+                  <label for="">Status : </label>
+                  <select style="width: 225px;" class="form-control" id="status" name="status" ngModel required>
+                      <option value="">Select Status</option>
+                      <option value="Pending">Pending</option>
+                  </select>
+                  <br>
+                  <input style="width: 225px;" type="submit" [disabled]="myform.invalid" value="ADD NEW ADS" class="btn btn-success btn-lg">
+              </form>
+          </div>
+          <div class="col-sm-4 col-xs-4"></div>
+      </div>
+      <!-- end of row-->
+  </div>
+  <!-- end of container -->
+  </div>

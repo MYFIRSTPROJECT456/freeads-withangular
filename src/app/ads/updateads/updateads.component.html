@@ -1,0 +1,44 @@
+<div class="panel-heading">
+  <div class="panel-heading-btn">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+  </div>
+  <h4 class="panel-title">Update Ads</h4>
+</div>
+<div class="panel-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <form #myform="ngForm" (ngSubmit)="updateAdsData(myform)" style="border:solid 1px #f3f3f3; padding: 39px;">
+          <label for="">Title : </label><input style="width: 250px;" type="text" class="form-control" name="tit" id="tit" [(ngModel)]="adsData.TITLE" ngModel required>
+          <br>
+          <label for="">Tags/Keywords : </label><input style="width: 250px;" type="text" class="form-control" id="tags" name="tags" [(ngModel)]="adsData.TAGSKEYS" ngModel required >
+          <br>
+          <label for="">Discription : </label><textarea style="width:
+          250px;" name="dis" id="dis" class="form-control" rows="3" [(ngModel)]="adsData.DISCRIPTION" ngModel required></textarea>
+          <br>
+          <label for="">Images : </label><input style="width: 250px;"type="text" class="form-control" id="img" name="img" [(ngModel)]="adsData.UPLOADIMG" ngModel required>
+          <br>
+          <label for="">Website : </label><input style=" width: 250px;" type="text" class="form-control" id="web" name="web" [(ngModel)]="adsData.WEBSITE" ngModel required>
+          <br>
+          <label for="">CategoryId : </label><input style="width: 250px;" type="text" class="form-control" id="c1id" name="c1id" [(ngModel)]="adsData.CATEGORYID" ngModel required>
+          <br>
+          <label for="">SubCategoryId : </label>
+          <input style="width: 250px;" name="scid" id="scid" class="form-control" [(ngModel)]="adsData.SUB_CATEGORY" ngModel required>
+          <br><label for="">StateId : </label><input style="width: 250px;" type="text" class="form-control" id="sid" name="sid" [(ngModel)]="adsData.STATEID" ngModel required>
+          <br><label for="">CityId : </label><input style="width: 250px;" type="text" class="form-control" id="cid" name="cid" [(ngModel)]="adsData.CITYID" ngModel required>
+          <br>
+          <label for="">LocalityId : </label><input style="width: 250px;" type="text" class="form-control" id="lid" name="lid" [(ngModel)]="adsData.LOCALITYID" ngModel required>
+          <label style="margin-top: 30px;">AREA : </label>
+          <input style="width: 250px;" type="text" class="form-control" id="area" name="area" [(ngModel)]="adsData.AREA" ngModel required>
+          <br>
+          <input style="width: 250px;" type="submit" [disabled]="myform.invalid" value="Update Ads" class="btn btn-success">
+        </form>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+</div>

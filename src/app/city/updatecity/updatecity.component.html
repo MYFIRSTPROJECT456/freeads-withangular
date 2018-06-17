@@ -1,0 +1,31 @@
+<div class="panel-heading">
+  <div class="panel-heading-btn">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+  </div>
+  <h4 class="panel-title">Update City</h4>
+</div>
+<div class="panel-body">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form #myform="ngForm" (ngSubmit)="updateCity(myform)" class="form-inline" style="border:solid 1px #f3f3f3; padding: 40px;">
+                <label for="">State Name : </label>
+                <select style="width: 184px;" name="sname" id="" class="form-control" required ngModel>
+                    <option *ngFor="let list of cityLists" value="{{list.STATEID}}">{{list.STATENAME}}</option>
+                </select>
+                 <br><br>
+                 <label for="">City Name : </label>
+                 
+                 <input type="text" class="form-control" id="cname" name="cname" [(ngModel)]="cities.CITYNAME" ngModel required>
+                <br><br>
+                <input style="width: 271px;" type="submit" [disabled]="myform.invalid" class="btn btn-success btn-lg">
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+</div>

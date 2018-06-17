@@ -1,0 +1,37 @@
+<div class="panel-heading">
+  <div class="panel-heading-btn">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+  </div>
+  <h4 class="panel-title">Create New Users</h4>
+</div>
+<div class="panel-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-xs-4"></div>
+      <div class="col-sm-4 col-xs-4">
+        <form #myform="ngForm" (ngSubmit)="createUserData(myform)"  style="border:solid 1px #f3f3f3; padding: 20px;" >
+          <label for="">User Name : </label>
+          <input style="width: 225px;" type="text" class="form-control" name="uname" id="uname" ngModel required>
+        
+          <label for="">Mobile No. : </label><input style="width: 225px;" type="text" class="form-control" id="mob" name="mob" ngModel required>
+    
+          <label for="">Email Id : </label><input style="width:225px;" type="text" class="form-control"  id="email" name="email" ngModel required>
+      
+          <label for="">Status : </label>
+          <select id="status" style="width: 225px;" class="form-control" name="status" ngModel required>
+              <option value="">Select Status</option>
+              <option value="Confirm">Confirm</option>
+              <option value="Unconfirmed">Unconfirmed</option>
+          </select> 
+          <label for="">User Password : </label><input style="width: 225px;" type="password" class="form-control"  id="upass" name="upass" ngModel required>
+          <br>
+          <input style="width: 225px;" type="submit" [disabled]="myform.invalid" value="Add State" class="btn btn-success btn-lg">
+        </form>
+      </div>
+      <div class="col-sm-4 col-xs-4"></div>
+    </div>
+  </div>
+</div>

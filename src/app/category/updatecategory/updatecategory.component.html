@@ -1,0 +1,26 @@
+<div class="panel-heading">
+  <div class="panel-heading-btn">
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+  </div>
+  <h4 class="panel-title">Update Category</h4>
+</div>
+<div class="panel-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <form #myform="ngForm" (ngSubmit)="updateCategoryData(myform);" class="form-inline"  style="border:solid 1px #f3f3f3; padding: 25px;">
+          <label for="">Category Name : </label><input type="text" class="form-control" id="cname"  name="cname" [(ngModel)]="categoryData.CATEGORYNAME" ngModel required>
+          <br><br>
+          <label for="">Parent-Category Id : </label><input style="width: 173px;" type="text" class="form-control" id="pid" name="pid" [(ngModel)]="categoryData.PARENTCATEGORYID" ngModel required>
+          <br><br>
+          <input style="width: 305px;" [disabled]="myform.invailid" type="submit" value="Update Category" class="btn btn-success btn-lg">
+        </form>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </div>
+</div>
