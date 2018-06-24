@@ -26,7 +26,13 @@ export class CitylistComponent implements OnInit {
     this._cityservice.getCityList()
     .subscribe(repsonse => this.cityLists = repsonse)
 
-    
+    let url = "http://localhost:4200/citylist";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   deleteCity(id){

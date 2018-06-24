@@ -21,6 +21,14 @@ export class UpdatecityComponent implements OnInit {
       // console.log('01', response.list);
       // console.log('02', response.data[0]);
     });
+
+    let url = "http://localhost:4200/updatecity";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
     
   }
 

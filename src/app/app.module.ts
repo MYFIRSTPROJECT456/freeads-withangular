@@ -37,28 +37,35 @@ import { ServicesComponent } from './frontSide/services/services.component';
 import { AdsComponent } from './frontSide/ads/ads.component';
 import { AboutComponent } from './frontSide/about/about.component';
 import { ContactComponent } from './frontSide/contact/contact.component';
+import { BackSideComponent } from './back-side/back-side.component';
+import { FheaderComponent } from './frontSide/fheader/fheader.component';
 
 const routes:Routes = [
-  { path:'', redirectTo: '/statelist', pathMatch: 'full' },
+  { path:'', redirectTo: '/home', pathMatch: 'full' },
   { path: 'create', component:CreateComponent },
   { path: 'statelist', component:ListComponent },
   { path: 'update/:sid', component:UpdateComponent },
-  { path:'citylist', component:CitylistComponent },
-  { path:'createcity', component:CreatecityComponent },
-  { path:'updatecity/:id', component:UpdatecityComponent },
-  { path:'localitylist', component:LocalitylistComponent },
-  { path:'createlocality', component:CreatelocalityComponent },
-  { path:'updatelocality/:id', component:UpdatelocalityComponent },
-  { path:'categorylist', component:CategorylistComponent },
-  { path:'createcategory', component:CreatecategoryComponent },
-  { path:'updatecategory/:id', component:UpdatecategoryComponent },
-  { path:'userslist', component:UserslistComponent },
-  { path:'createusers', component:CreateusersComponent },
-  { path:'updateusers/:id', component:UpdateusersComponent },
-  { path:'adslist', component:AdslistComponent },
-  { path:'createads', component:CreateadsComponent },
-  { path:'updateads/:id', component:UpdateadsComponent },
-  { path: 'home', component:HomeComponent}
+  { path: 'citylist', component:CitylistComponent },
+  { path: 'createcity', component:CreatecityComponent },
+  { path: 'updatecity/:id', component:UpdatecityComponent },
+  { path: 'localitylist', component:LocalitylistComponent },
+  { path: 'createlocality', component:CreatelocalityComponent },
+  { path: 'updatelocality/:id', component:UpdatelocalityComponent },
+  { path: 'categorylist', component:CategorylistComponent },
+  { path: 'createcategory', component:CreatecategoryComponent },
+  { path: 'updatecategory/:id', component:UpdatecategoryComponent },
+  { path: 'userslist', component:UserslistComponent },
+  { path: 'createusers', component:CreateusersComponent },
+  { path: 'updateusers/:id', component:UpdateusersComponent },
+  { path: 'adslist', component:AdslistComponent },
+  { path: 'createads', component:CreateadsComponent },
+  { path: 'updateads/:id', component:UpdateadsComponent },
+  { path: 'home', component:HomeComponent},
+  { path: 'admin', component:BackSideComponent},
+  { path: 'contact', component:ContactComponent},
+  { path: 'service', component:ServicesComponent},
+  { path: 'about', component:AboutComponent},
+  { path: 'ads', component:AdsComponent}
 ]
 
 @NgModule({
@@ -88,7 +95,9 @@ const routes:Routes = [
     ServicesComponent,
     AdsComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    BackSideComponent,
+    FheaderComponent
    
     
   ],

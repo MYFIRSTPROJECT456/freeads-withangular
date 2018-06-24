@@ -16,6 +16,14 @@ export class UserslistComponent implements OnInit {
   ngOnInit() {
     this._usersservice.getUserList()
     .subscribe(response => this.userslist = response)
+
+    let url = "http://localhost:4200/userslist";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   deleteUsers(id){

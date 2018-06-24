@@ -35,6 +35,13 @@ export class AdslistComponent implements OnInit {
       console.log('01', response);
     })
     
+    let url = "http://localhost:4200/adslist";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   deleteAds(id){

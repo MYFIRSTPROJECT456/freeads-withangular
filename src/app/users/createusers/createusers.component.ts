@@ -12,6 +12,13 @@ export class CreateusersComponent implements OnInit {
   constructor(private _usersservice:UsersService, private router:Router) { }
 
   ngOnInit() {
+    let url = "http://localhost:4200/createusers";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   createUserData(inputData){

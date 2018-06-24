@@ -14,6 +14,14 @@ export class UpdateadsComponent implements OnInit {
   ngOnInit() {
     this._adsservice.getAdsById(this.router.snapshot.params['id'])
     .subscribe(response => this.adsData = response[0])
+
+    let url = "http://localhost:4200/updateads";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   updateAdsData(inputData){

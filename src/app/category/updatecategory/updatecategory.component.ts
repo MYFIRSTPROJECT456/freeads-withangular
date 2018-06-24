@@ -15,6 +15,14 @@ export class UpdatecategoryComponent implements OnInit {
     // console.log('02',this.router.snapshot.params.id)
     this._categoryservice.getCategoryById(this.router.snapshot.params.id)
     .subscribe(response => this.categoryData = response[0])
+
+    let url = "http://localhost:4200/updatecategory";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
   
   updateCategoryData(inputData){

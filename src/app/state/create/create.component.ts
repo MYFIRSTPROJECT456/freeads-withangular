@@ -12,6 +12,14 @@ export class CreateComponent implements OnInit {
   constructor(private _stateservice: StateService, private router:Router ) { }
 
   ngOnInit() {
+
+    let url = "http://localhost:4200/createcity";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   createState(inputdata){

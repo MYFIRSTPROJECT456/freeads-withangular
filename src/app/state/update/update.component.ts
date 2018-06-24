@@ -14,6 +14,14 @@ export class UpdateComponent implements OnInit {
   ngOnInit() {
     this._stateservice.getStateById(this.route.snapshot.params['sid'])
     .subscribe(response => this.states = response[0]);
+
+    let url = "http://localhost:4200/updatestate";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
     
   }
 

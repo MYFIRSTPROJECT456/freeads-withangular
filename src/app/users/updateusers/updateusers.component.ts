@@ -14,6 +14,14 @@ export class UpdateusersComponent implements OnInit {
   ngOnInit() {
     this._usersservice.getUsersById(this.router.snapshot.params['id'])
     .subscribe(response => this.usersData = response[0])
+
+    let url = "http://localhost:4200/updateusers";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   updateUsers(inputData){

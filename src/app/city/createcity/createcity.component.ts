@@ -16,6 +16,14 @@ export class CreatecityComponent implements OnInit {
   ngOnInit() {
     this._cityservice.getStateList()
     .subscribe(response => this.stateLists = response)
+
+    let url = "http://localhost:4200/createcity";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   createCity(inpuData){

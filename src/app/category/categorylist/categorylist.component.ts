@@ -16,6 +16,14 @@ export class CategorylistComponent implements OnInit {
   ngOnInit() {
     this._categoryservice.getCategoryList()
     .subscribe(response =>this.categoryLists = response);
+
+    let url = "http://localhost:4200/categorylist";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   deleteCategory(id){

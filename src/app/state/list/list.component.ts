@@ -19,6 +19,13 @@ export class ListComponent implements OnInit {
     this._stateservice.getList()
     .subscribe(respData => this.stateLists = respData);
     
+    let url = "http://localhost:4200/statelist";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   deleteState(id){

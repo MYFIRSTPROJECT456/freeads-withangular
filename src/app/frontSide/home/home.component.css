@@ -1,0 +1,6 @@
+.carousel{
+    margin: 0px;
+}
+.carousel-inner,item{
+    height: 560px;
+}

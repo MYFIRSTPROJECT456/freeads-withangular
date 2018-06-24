@@ -37,6 +37,13 @@ export class CreateadsComponent implements OnInit {
       this.categoryLists = response;
     })
   
+    let url = "http://localhost:4200/createads";
+
+    if(document.URL == url){
+      $('#frontheader').css({
+        'display':'none'
+      });
+    }
   }
 
   public fileEvent($event) {
