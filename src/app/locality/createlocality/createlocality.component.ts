@@ -14,6 +14,10 @@ export class CreatelocalityComponent implements OnInit {
   ngOnInit() {
     this._localityservice.getCityList()
     .subscribe(response => this.cityLists = response)
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.router.navigate(['adminlogin']);
+    }
   }
 
   createLocality(inputData){

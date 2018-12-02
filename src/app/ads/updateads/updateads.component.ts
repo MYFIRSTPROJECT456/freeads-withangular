@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdsService } from '../../service/ads.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-updateads',
   templateUrl: './updateads.component.html',
@@ -9,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UpdateadsComponent implements OnInit {
   private adsData:String[] = [];
-  constructor(private _adsservice:AdsService, private router:ActivatedRoute,private route:Router) { }
+  constructor(private _adsservice:AdsService, private router:ActivatedRoute,private route:Router,private toastr: ToastrService) { }
 
   ngOnInit() {
     this._adsservice.getAdsById(this.router.snapshot.params['id'])
@@ -22,6 +24,10 @@ export class UpdateadsComponent implements OnInit {
         'display':'none'
       });
     }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.route.navigate(['adminlogin']);
+    }
   }
 
   updateAdsData(inputData){
@@ -30,10 +36,10 @@ export class UpdateadsComponent implements OnInit {
     this._adsservice.updateAds(inputValue, id)
     .subscribe(response => {
       if(response.status == 1){
-        alert("Ads Update Failed");
+        this.toastr.success('Ads Updated Successfully');
       }
       else{
-        alert('Ads Updated Successfully');
+        this.toastr.warning('Ads Update Failed');
         this.route.navigate(['/adslist']);
       }
       // console.log('07', response);

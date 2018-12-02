@@ -9,7 +9,7 @@ export class CategoryService {
   private _getCategoryByIdUrl = "http://13.127.173.109:3000/updatecat?id=";
   private _postUpdateCategoryUrl = "http://13.127.173.109:3000/updatecatdata?id=";
   private _getDeleteCategoryUrl = "http://13.127.173.109:3000/deletecategory?id=";
-  private _getSubcategoryById = "http://13.127.173.109:3000/getsubcategorybycategory?id="
+  private _getSubcategoryById = "http://13.127.173.109:3000/getsubcategorybycategory?id=";
 
   constructor(private _http:Http) { }
 

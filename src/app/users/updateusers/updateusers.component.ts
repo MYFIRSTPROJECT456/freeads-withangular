@@ -22,6 +22,10 @@ export class UpdateusersComponent implements OnInit {
         'display':'none'
       });
     }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.route.navigate(['adminlogin']);
+    }
   }
 
   updateUsers(inputData){

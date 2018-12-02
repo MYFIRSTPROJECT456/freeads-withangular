@@ -20,6 +20,10 @@ export class CreateComponent implements OnInit {
         'display':'none'
       });
     }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.router.navigate(['adminlogin']);
+    }
   }
 
   createState(inputdata){

@@ -23,6 +23,10 @@ export class UpdatecategoryComponent implements OnInit {
         'display':'none'
       });
     }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.route.navigate(['adminlogin']);
+    }
   }
   
   updateCategoryData(inputData){

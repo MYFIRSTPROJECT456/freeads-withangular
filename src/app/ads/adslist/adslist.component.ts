@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdsService } from '../../service/ads.service';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
-
+import { ToastrService } from 'ngx-toastr';
 import { DataTableDirective } from 'angular-datatables';
 @Component({
   selector: 'app-adslist',
@@ -24,7 +24,7 @@ export class AdslistComponent implements OnInit {
   }
 
   private adsLists:String[] = [];
-  constructor(private _adsservice:AdsService, private router:Router) { }
+  constructor(private _adsservice:AdsService, private router:Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     
@@ -42,16 +42,20 @@ export class AdslistComponent implements OnInit {
         'display':'none'
       });
     }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.router.navigate(['adminlogin']);
+    }
   }
 
   deleteAds(id){
     this._adsservice.deleteAds(id)
     .subscribe(response =>{
       if(response.status == 1){
-        alert("Ads Delete Failed");
+        this.toastr.warning('Delete Failed');
       }
       else{
-        alert("Ads Deleted Successfully");
+        this.toastr.success('Ads Deleted Successfully');
         this.router.navigateByUrl('/createusers').then(()=>this.router.navigate(['/adslist']))
       }
     })

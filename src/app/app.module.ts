@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { DataTablesModule } from 'angular-datatables';
 //all servieses
+import { DataTablesModule } from 'angular-datatables';
 import { StateService } from './service/state.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,6 +39,7 @@ import { AboutComponent } from './frontSide/about/about.component';
 import { ContactComponent } from './frontSide/contact/contact.component';
 import { BackSideComponent } from './back-side/back-side.component';
 import { FheaderComponent } from './frontSide/fheader/fheader.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 const routes:Routes = [
   { path:'', redirectTo: '/home', pathMatch: 'full' },
@@ -61,7 +62,8 @@ const routes:Routes = [
   { path: 'createads', component:CreateadsComponent },
   { path: 'updateads/:id', component:UpdateadsComponent },
   { path: 'home', component:HomeComponent},
-  { path: 'admin', component:BackSideComponent},
+  { path: 'adminlogin', component:AdminloginComponent},
+  { path: 'admindash', component:BackSideComponent},
   { path: 'contact', component:ContactComponent},
   { path: 'service', component:ServicesComponent},
   { path: 'about', component:AboutComponent},
@@ -97,7 +99,8 @@ const routes:Routes = [
     AboutComponent,
     ContactComponent,
     BackSideComponent,
-    FheaderComponent
+    FheaderComponent,
+    AdminloginComponent
    
     
   ],
@@ -107,9 +110,9 @@ const routes:Routes = [
     HttpModule,
     FormsModule,
     HttpClientModule,
-    DataTablesModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DataTablesModule
    
     
   ],

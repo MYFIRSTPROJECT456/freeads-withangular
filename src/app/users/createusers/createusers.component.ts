@@ -19,6 +19,10 @@ export class CreateusersComponent implements OnInit {
         'display':'none'
       });
     }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.router.navigate(['adminlogin']);
+    }
   }
 
   createUserData(inputData){

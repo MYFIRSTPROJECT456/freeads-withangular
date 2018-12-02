@@ -19,6 +19,10 @@ export class UpdatelocalityComponent implements OnInit {
       this.localityData = response.localityData[0]
       console.log(this.localityData);
     });
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.router.navigate(['adminlogin']);
+    }
   }
 
   updateLocality(inputData){

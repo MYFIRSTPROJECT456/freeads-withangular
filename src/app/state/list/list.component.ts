@@ -3,7 +3,7 @@ import { StateService } from '../../service/state.service';
 import { State } from '../../classes/state';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as $ from 'jquery';
-
+declare var jquery: any;
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -25,6 +25,10 @@ export class ListComponent implements OnInit {
       $('#frontheader').css({
         'display':'none'
       });
+    }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.router.navigate(['adminlogin']);
     }
   }
 

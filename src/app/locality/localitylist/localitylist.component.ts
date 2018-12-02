@@ -17,6 +17,10 @@ export class LocalitylistComponent implements OnInit {
    this._localityservice.getLocalityList()
    .subscribe(response =>this.localityLists = response)
 
+   if(localStorage.getItem('adminLoginData') == null){
+    this.router.navigate(['adminlogin']);
+  }
+
   }
 
   deleteLocality(id){

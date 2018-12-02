@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <h1><a class="navbar-brand" href="index.html">Admin Panel</a></h1>
+            <h1><a class="navbar-brand"routerLink="/admin">Admin Panel</a></h1>
         </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -59,4 +59,5 @@
             </nav>
         </div>
     </nav>
+    <button type="button" (click)="logOutFunct()" class="btn btn-danger">LogOut</button>
 </div>

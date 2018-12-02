@@ -15,7 +15,7 @@ export class BackSideComponent implements OnInit {
       console.log('04');
       $('.panel-inverse').text('<app-list></app-list>');
     });
-    let url = "http://localhost:4200/admin";
+    let url = "http://localhost:4200/admindash";
 
     if(document.URL == url){
       $('#frontheader').css({

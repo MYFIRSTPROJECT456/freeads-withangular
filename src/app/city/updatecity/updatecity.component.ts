@@ -29,6 +29,10 @@ export class UpdatecityComponent implements OnInit {
         'display':'none'
       });
     }
+
+    if(localStorage.getItem('adminLoginData') == null){
+      this.router.navigate(['adminlogin']);
+    }
     
   }
 

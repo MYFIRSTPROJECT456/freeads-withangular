@@ -33,6 +33,11 @@ export class CitylistComponent implements OnInit {
         'display':'none'
       });
     }
+
+        if(localStorage.getItem('adminLoginData') == null){
+          this.router.navigate(['adminlogin']);
+        }
+      
   }
 
   deleteCity(id){
@@ -42,4 +47,6 @@ export class CitylistComponent implements OnInit {
       this.router.navigateByUrl('/createcity').then(()=>this.router.navigate(['/citylist']));
     });
   }
+
+  
 }
